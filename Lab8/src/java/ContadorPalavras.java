@@ -1,8 +1,4 @@
 import java.io.*;
-import java.util.concurrent.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class ContadorPalavras {
     public static void main(String[] args) throws Exception {
@@ -10,12 +6,13 @@ public class ContadorPalavras {
         System.err.println("Usage: java Sum filepath1 filepath2 filepathN");
         System.exit(1);
     }
-    
 
 //many exceptions could be thrown here. we don't care
+    int acumula = 0;
     for (String path : args) {
-        System.out.println(contarPalavras(path));
+        acumula += contarPalavras(path);
     }
+    System.out.println(acumula);
 }
 
     static int contarPalavras(String nomeArquivo) throws IOException {

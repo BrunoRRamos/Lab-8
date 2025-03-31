@@ -9,4 +9,4 @@ if [ "$#" -lt 1 ]; then
 fi
 
 # chama o programa java com os arg passados para o script bash
-java -cp $BASE_DIR/bin/ ContadorPalavras "$@"
+time java -cp $BASE_DIR/bin/ ContadorPalavrasConcorrente "$@"
